@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Kaam Khojo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="kk-services">
+  <h1>Our Services</h1>
+  <p class="subtext">Kaam Khojo brings you verified local services from trusted workers. Hire skilled professionals easily from your village or city!</p>
+
+  <div class="services-grid">
+    <div class="service-box">
+      <h3>Plumber</h3>
+      <p>Get quick plumbing services for your home, kitchen or bathroom at affordable rates.</p>
+    </div>
+    <div class="service-box">
+      <h3>Electrician</h3>
+      <p>Need wiring, fan repair, or home electricity setup? Book trained electricians now.</p>
+    </div>
+    <div class="service-box">
+      <h3>Driver</h3>
+      <p>Hire verified drivers for taxi, tempo, or commercial vehicle with proper ID and license.</p>
+    </div>
+    <div class="service-box">
+      <h3>Construction Worker</h3>
+      <p>From masonry to scaffolding, find experienced labourers for your construction needs.</p>
+    </div>
+    <div class="service-box">
+      <h3>Painter</h3>
+      <p>Interior or exterior — book painters for homes, schools or offices with clean finishes.</p>
+    </div>
+    <div class="service-box">
+      <h3>Home Cleaner</h3>
+      <p>Reliable cleaning staff available for daily or weekly work with flexible timings.</p>
+    </div>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // Sab elements ko select karo jo animate karne hain
+  const allElements = [
+    document.querySelector('body.kk-services > h1'),
+    document.querySelector('body.kk-services > p.subtext'),
+    ...document.querySelectorAll('.services-grid .service-box')
+  ].filter(Boolean);
+
+  // Sab elements ko pehle invisible aur translateY 30px kar do
+  allElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+
+  // Ek ke baad ek animate karo with delay
+  allElements.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, i * 150 + 300);
+  });
+
+  // Heading ko baar baar fade in/out karne ke liye
+  const heading = document.querySelector('body.kk-services > h1');
+  if (heading) {
+    let visible = true;
+    setInterval(() => {
+      heading.style.transition = 'opacity 1s ease';
+      heading.style.opacity = visible ? '0' : '1';
+      visible = !visible;
+    }, 1000);
+  }
+});
+
+  </script>
+</body>
+</html>

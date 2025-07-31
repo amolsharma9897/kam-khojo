@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Kaam Khojo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="kk-about">
+  <div class="about-container">
+    <h1>About Kaam Khojo</h1>
+    <p>
+      <strong>Kaam Khojo</strong> is a digital platform dedicated to connecting skilled and unskilled workers with local job opportunities across India.
+    </p>
+    <p>
+      Our mission is simple: <strong>"Har haath ko kaam mile"</strong>. We empower daily wage workers like plumbers, electricians, drivers,
+      and construction helpers by giving them visibility and access to work through technology.
+    </p>
+    <p>
+      Whether you're an employer looking for reliable help or a worker looking for your next job — Kaam Khojo bridges the gap between demand and supply
+      in the most efficient and transparent way.
+    </p>
+    <p>
+      Join us in building a better future for Bharat, one job at a time.
+    </p>
+  </div>
+
+
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // Pehle jo pura content animate kar rahe the
+  function getAllElements(parent) {
+    let elements = [];
+    for (const child of parent.children) {
+      elements.push(child);
+      elements = elements.concat(getAllElements(child));
+    }
+    return elements;
+  }
+
+  const allElements = getAllElements(document.body);
+
+  allElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+
+  allElements.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, i * 100 + 300);
+  });
+
+  // Ab About heading ko baar baar fade in/out karna hai
+  const aboutHeading = document.querySelector('.about-container h1');
+  if (aboutHeading) {
+    let visible = true;
+    setInterval(() => {
+      if (visible) {
+        aboutHeading.style.transition = 'opacity 1s ease';
+        aboutHeading.style.opacity = '0';
+      } else {
+        aboutHeading.style.opacity = '1';
+      }
+      visible = !visible;
+    }, 1000); // har 1 second me toggle hoga fade in/out
+  }
+});
+
+</script>
+
+
+ </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Kaam Khojo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   /*---------------------------contact page--------------------------------------*/
+/* Modern, Attractive Contact Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #410101, #1b263b);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(218, 119, 119, 0.062);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(255, 120, 1, 0.4);
+  color: #fff;
+  animation: fadeIn 1s ease;
+  opacity: 0;
+  transform: rotateY(30deg) rotateX(10deg) scale(0.8);
+  transition: all 1s ease;
+}
+
+header h1 {
+  color: #ff7f11;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+header span {
+  color: #ffffff;
+}
+
+header p {
+  font-size: 14px;
+  color: #cbd5e1;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(228, 222, 222, 0.872);
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff7f11;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 127, 17, 0.3);
+}
+
+.contact-form button:hover {
+  background: #ce9661;
+  box-shadow: 0 4px 20px rgba(255, 127, 17, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+    transform: none;
+    box-shadow: 0 0 10px rgba(255, 127, 17, 0.3);
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    
+    
+
+    <header>
+      <h1>Contact <span>Kaam Khojo</span></h1>
+      <p>Aapke sujhav, sawaal ya madad ke liye hamesha yahan hain.</p>
+    </header>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Aapka Naam" required />
+      <input type="email" placeholder="Email ID" required />
+      <textarea placeholder="Aapka Sandesh" rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector('.container');
+    const header = container.querySelector("header");
+    const inputs = container.querySelectorAll(".contact-form input, .contact-form textarea, .contact-form button");
+
+    // Animate main box
+    setTimeout(() => {
+      container.style.opacity = "1";
+      container.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
+    }, 100);
+
+    // Animate heading
+    setTimeout(() => {
+      header.style.opacity = "1";
+      header.style.transform = "translateY(0) rotateX(0deg)";
+    }, 600);
+
+    // Animate form items one by one
+    inputs.forEach((el, i) => {
+      setTimeout(() => {
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0) rotateX(0deg)";
+      }, 800 + i * 200);
+    });
+  });
+</script>
+
+
+
+ 
+
+
+
+
+
+
+
+</body>
+</html>
